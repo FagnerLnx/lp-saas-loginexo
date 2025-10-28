@@ -33,95 +33,73 @@
         .feature-card h3 { font-weight: 700; color: var(--azul-escuro); }
         .bg-light-blue { background-color: #F0F5FF; }
         .risk-free-box { background-color: var(--cinza-claro); border: 2px dashed var(--verde-destaque); border-radius: 15px; padding: 40px; }
+
+        /* ========================================================== */
+        /* == NOVA CLASSE CSS ADICIONADA PARA CORRIGIR AS IMAGENS == */
+        /* ========================================================== */
+        .feature-image-wrapper {
+            border-radius: 12px; /* A borda arredondada vai no container */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden; /* Essencial para o object-fit funcionar com border-radius */
+            height: 350px; /* Altura base para as imagens */
+            width: 100%;
+        }
+        .feature-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* A mágica acontece aqui: cobre a área sem distorcer */
+            object-position: top; /* Foca na parte de cima da imagem, geralmente o mais importante em UIs */
+        }
+        @media (max-width: 991px) {
+            .feature-image-wrapper {
+                height: 280px; /* Altura menor para telas mobile */
+            }
+        }
     </style>
 </head>
 <body>
-        
-<nav class="navbar navbar-dark fixed-top" style="background-color: var(--azul-escuro); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <div class="container align-items-center">
-        <!-- CORREÇÃO 1: Link do logo aponta para a raiz do site -->
-        <a class="navbar-brand" href="index.html">
-            <!-- CORREÇÃO 2: Caminho da imagem estático -->
-            <img src="static/gestor/images/logo.png" alt="Logotipo LogiNexo" style="max-height: 35px;">
-        </a>
-        <!-- CORREÇÃO 3: Link de login aponta para o subdomínio do app -->
-        <a href="https://app.loginexo.com.br" class="btn-login">Acessar minha conta</a>
-    </div>
-</nav>
-
-    <!-- SEÇÃO 1: A GRANDE PROMESSA -->
-    <header class="hero text-center">
-        <div class="container">
-            <h1 class="mb-3">Sua Paixão, Agora com o Lucro que Ela Merece.</h1>
-            <p class="lead">O sistema de gestão que transforma criadores em empresários de sucesso. Chega de achismos e planilhas. É hora de ter controle, clareza e, finalmente, a paz de espírito para focar no que você ama.</p>
-            <!-- CORREÇÃO 4: Link do CTA principal aponta para o arquivo local -->
-            <a href="planos.html" class="btn-cta-primary">Escolher Meu Plano e Começar</a>
-            <p class="mt-3"><small>Acesso imediato | Garantia de 14 dias</small></p>
-            <!-- CORREÇÃO 5: Caminho da imagem estático -->
-            <img src="static/gestor/images/dashboard-hero.webp" class="img-fluid hero-image" alt="Dashboard do LogiNexo Gestor de Lucro">
-        </div>
-    </header>
-
-    <!-- SEÇÃO 2: A PONTE -->
-    <section class="container text-center py-5 my-4">
-        <h2 class="section-title">A planilha te deu o mapa.<br>Nós te damos o piloto automático.</h2>
-        <p class="fs-5" style="max-width: 800px; margin: 0 auto;">A Calculadora de Preço Inteligente te mostrou o tamanho do problema e a importância dos números. Mas preencher tudo manualmente, atualizar o estoque a cada venda e recalcular tudo a cada novo produto... gasta o tempo que você não tem. É hora de automatizar.</p>
-    </section>
+    <!-- Navbar e Hero Section (sem alterações, já estão corretos) -->
+    <nav class="navbar navbar-dark fixed-top" style="background-color: var(--azul-escuro); box-shadow: 0 2px 10px rgba(0,0,0,0.1);"><div class="container align-items-center"><a class="navbar-brand" href="index.html"><img src="static/gestor/images/logo.png" alt="Logotipo LogiNexo" style="max-height: 35px;"></a><a href="https://app.loginexo.com.br" class="btn-login">Acessar minha conta</a></div></nav>
+    <header class="hero text-center"><div class="container"><h1 class="mb-3">Sua Paixão, Agora com o Lucro que Ela Merece.</h1><p class="lead">O sistema de gestão que transforma criadores em empresários de sucesso. Chega de achismos e planilhas. É hora de ter controle, clareza e, finalmente, a paz de espírito para focar no que você ama.</p><a href="planos.html" class="btn-cta-primary">Escolher Meu Plano e Começar</a><p class="mt-3"><small>Acesso imediato | Garantia de 14 dias</small></p><img src="static/gestor/images/dashboard-hero.webp" class="img-fluid hero-image" alt="Dashboard do LogiNexo Gestor de Lucro"></div></header>
+    <section class="container text-center py-5 my-4"><h2 class="section-title">A planilha te deu o mapa.<br>Nós te damos o piloto automático.</h2><p class="fs-5" style="max-width: 800px; margin: 0 auto;">A Calculadora de Preço Inteligente te mostrou o tamanho do problema e a importância dos números. Mas preencher tudo manualmente, atualizar o estoque a cada venda e recalcular tudo a cada novo produto... gasta o tempo que você não tem. É hora de automatizar.</p></section>
     
-    <!-- SEÇÃO 3: OS SUPERPODERES -->
+    <!-- SEÇÃO 3: OS SUPERPODERES (COM CORREÇÕES APLICADAS) -->
     <section class="py-5 bg-light-blue">
         <div class="container">
             <h2 class="section-title text-center">Conheça os superpoderes que você terá:</h2>
             <div class="row g-4 mt-4 align-items-center">
                 <div class="col-lg-6">
-                    <!-- CORREÇÃO 6: Caminho da imagem estático -->
-                    <img src="static/gestor/images/feature-precificacao.webp" class="img-fluid rounded-3 shadow" alt="Precificação Inteligente no LogiNexo">
+                    <!-- MUDANÇA 1: Imagem envolvida por um 'wrapper' e classe aplicada -->
+                    <div class="feature-image-wrapper">
+                        <img src="static/gestor/images/feature-precificacao.webp" class="feature-image" alt="Precificação Inteligente no LogiNexo">
+                    </div>
                 </div>
                 <div class="col-lg-6"><div class="feature-card bg-white"><i class="bi bi-magic"></i><h3>Precifique com a Confiança de um CEO</h3><p>Nosso sistema usa a mesma lógica do seu MBA (Custeio e Markup) de forma 100% visual. Apenas informe seus custos, monte a "receita" do produto e o LogiNexo calcula o preço de venda ideal, garantindo seu lucro em cada item.</p></div></div>
             </div>
             <div class="row g-4 mt-5 align-items-center">
                  <div class="col-lg-6 order-lg-2">
-                    <!-- CORREÇÃO 7: Caminho da imagem estático -->
-                    <img src="static/gestor/images/feature-estoque.webp" class="img-fluid rounded-3 shadow" alt="Controle de Estoque no LogiNexo">
+                    <!-- MUDANÇA 2: Imagem envolvida por um 'wrapper' e classe aplicada -->
+                    <div class="feature-image-wrapper">
+                        <img src="static/gestor/images/feature-estoque.webp" class="feature-image" alt="Controle de Estoque no LogiNexo">
+                    </div>
                 </div>
                 <div class="col-lg-6 order-lg-1"><div class="feature-card bg-white"><i class="bi bi-box-seam-fill"></i><h3>Nunca mais perca uma venda por falta de material</h3><p>A cada venda registrada no PDV, o sistema dá baixa automática na matéria-prima correspondente. Com alertas visuais de estoque baixo, você compra o que precisa, na hora certa, sem estresse.</p></div></div>
             </div>
             <div class="row g-4 mt-5 align-items-center">
                 <div class="col-lg-6">
-                    <!-- CORREÇÃO 8: Caminho da imagem estático -->
-                    <img src="static/gestor/images/feature-dashboard.webp" class="img-fluid rounded-3 shadow" alt="Dashboard Raio-X no LogiNexo">
+                    <!-- MUDANÇA 3: Imagem envolvida por um 'wrapper' e classe aplicada -->
+                    <div class="feature-image-wrapper">
+                         <img src="static/gestor/images/feature-dashboard.webp" class="feature-image" alt="Dashboard Raio-X no LogiNexo">
+                    </div>
                 </div>
                 <div class="col-lg-6"><div class="feature-card bg-white"><i class="bi bi-speedometer2"></i><h3>O Raio-X do seu negócio, em tempo real</h3><p>Nosso Dashboard principal é a sua torre de comando. Veja em segundos o progresso da sua meta de faturamento, seu lucro real do mês e o ranking dos produtos mais vendidos. Decisões inteligentes, finalmente, se tornaram fáceis.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO 4: A OFERTA IRRESISTÍVEL -->
-    <section class="container text-center py-5 my-4">
-        <h2 class="section-title">Chega de achismos. É hora de ter o controle.</h2>
-        <div class="card p-5 mx-auto" style="max-width: 600px; background-color: var(--azul-escuro); color: var(--branco); border-radius: 20px;">
-            <div class="card-body">
-                <h3 class="fw-bold">Pronto(a) para ter clareza total do seu lucro?</h3>
-                <p class="text-white-50">Sua jornada para a maestria empreendedora começa com um único passo.</p>
-                <!-- CORREÇÃO 9: Link do CTA final aponta para o arquivo local -->
-                <a href="planos.html" class="btn-cta-primary mt-4">Encontre o Plano Perfeito Para Você</a>
-            </div>
-        </div>
-        <div class="risk-free-box mt-5 mx-auto" style="max-width: 700px;">
-            <h4 class="fw-bold">Sua tranquilidade é nossa prioridade.</h4>
-            <p class="fs-5">Teste o LogiNexo por <strong>14 dias completos</strong>. Se por qualquer motivo você achar que não é para você, basta solicitar o reembolso e nós o processaremos integralmente. Sem perguntas, sem burocracia. O risco é todo nosso.</p>
-        </div>
-    </section>
-  
-    <!-- RODAPÉ -->
-    <footer class="text-center py-4" style="background-color: var(--azul-escuro); color: var(--cinza-claro);">
-        <p class="mb-1">&copy; 2025 LogiNexo. Gestão poderosa, sem complicação.</p>
-        <!-- CORREÇÃO 10: Links de rodapé podem apontar para arquivos locais se forem criados -->
-        <p class="mb-0"><small>
-            <a href="politica_privacidade.html" class="text-white-50 text-decoration-none">Política de Privacidade</a> | 
-            <a href="termos_de_uso.html" class="text-white-50 text-decoration-none">Termos de Uso</a>
-        </small></p>
-    </footer>
+    <!-- Seção de Oferta e Rodapé (sem alterações, já estão corretos) -->
+    <section class="container text-center py-5 my-4"><h2 class="section-title">Chega de achismos. É hora de ter o controle.</h2><div class="card p-5 mx-auto" style="max-width: 600px; background-color: var(--azul-escuro); color: var(--branco); border-radius: 20px;"><div class="card-body"><h3 class="fw-bold">Pronto(a) para ter clareza total do seu lucro?</h3><p class="text-white-50">Sua jornada para a maestria empreendedora começa com um único passo.</p><a href="planos.html" class="btn-cta-primary mt-4">Encontre o Plano Perfeito Para Você</a></div></div><div class="risk-free-box mt-5 mx-auto" style="max-width: 700px;"><h4 class="fw-bold">Sua tranquilidade é nossa prioridade.</h4><p class="fs-5">Teste o LogiNexo por <strong>14 dias completos</strong>. Se por qualquer motivo você achar que não é para você, basta solicitar o reembolso e nós o processaremos integralmente. Sem perguntas, sem burocracia. O risco é todo nosso.</p></div></section>
+    <footer class="text-center py-4" style="background-color: var(--azul-escuro); color: var(--cinza-claro);"><p class="mb-1">&copy; 2025 LogiNexo. Gestão poderosa, sem complicação.</p><p class="mb-0"><small><a href="politica_privacidade.html" class="text-white-50 text-decoration-none">Política de Privacidade</a> | <a href="termos_de_uso.html" class="text-white-50 text-decoration-none">Termos de Uso</a></small></p></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
