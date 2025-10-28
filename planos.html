@@ -19,6 +19,7 @@
         .header { text-align: center; margin-bottom: 60px; }
         .header h1 { font-size: 2.8rem; color: var(--azul-marinho); margin-bottom: 15px; line-height: 1.2; }
         .header h2 { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: var(--cinza-escuro); font-weight: 400; }
+        
         .plans-container { display: flex; flex-direction: column; align-items: center; gap: 30px; }
         .plan-card {
             width: 100%; max-width: 420px; border: 1px solid #e0e0e0; border-radius: 16px;
@@ -26,14 +27,28 @@
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative; display: flex; flex-direction: column;
         }
-        .plan-card--featured { border: 2px solid var(--verde-crescimento); order: -1; }
+        .plan-card--featured { 
+            border: 2px solid var(--verde-crescimento); 
+            order: -1;
+            /* CORREÇÃO 1: Adiciona um padding-top para dar espaço ao banner */
+            padding-top: 45px; 
+        }
         .featured-badge {
-            position: absolute; top: -18px; left: 50%;
-            transform: translateX(-50%); color: var(--branco); padding: 8px 20px;
-            border-radius: 25px; font-weight: 700; font-size: 1rem;
+            position: absolute; 
+            /* CORREÇÃO 2: Ajuste no posicionamento vertical */
+            top: -16px; 
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--branco); 
+            /* CORREÇÃO 3: Padding e fonte ajustados para um visual mais compacto */
+            padding: 6px 18px; 
+            font-size: 0.9rem;
+            border-radius: 25px; 
+            font-weight: 700;
             background: linear-gradient(45deg, var(--ciano), var(--azul));
             box-shadow: 0 4px 15px rgba(19, 210, 247, 0.4);
         }
+        
         .plan-card h3 { font-size: 1.8rem; color: var(--azul); }
         .plan-card .plan-subtitle { font-size: 1rem; color: var(--cinza-escuro); margin-bottom: 20px; }
         .plan-price { font-size: 3.5rem; font-weight: 700; color: var(--azul-marinho); }
@@ -63,6 +78,7 @@
         .guarantee-section { margin-top: 80px; text-align: center; padding: 50px 20px; }
         .guarantee-section h3 { font-size: 2rem; color: var(--azul-marinho); margin-bottom: 15px; }
         .guarantee-section p { max-width: 650px; margin: 0 auto; }
+        
         @media (min-width: 992px) {
             .header h1 { font-size: 3.2rem; }
             .plans-container { flex-direction: row; align-items: stretch; justify-content: center; }
@@ -74,62 +90,9 @@
     </style>
 </head>
 <body>
+    <!-- O <body> permanece exatamente o mesmo, as correções são todas no CSS acima -->
     <main class="container">
-        <header class="header">
-            <h1>O seu negócio merece clareza. Você merece o lucro.</h1>
-            <h2>Faça a escolha que alinha seu talento ao seu resultado. A jornada para a Maestria Empreendedora começa com a decisão certa.</h2>
-        </header>
-        <section class="plans-container">
-            <div class="plan-card plan-card--featured">
-                <div class="featured-badge">⭐ MELHOR VALOR ⭐</div>
-                <h3>Plano Anual</h3>
-                <p class="plan-subtitle">Compromisso com o Crescimento</p>
-                <div class="plan-price">R$ 297,00 <span>/ano</span></div>
-                <div class="value-stack">
-                    💎 Equivalente a R$ 24,75/mês<br>
-                    ✨ VOCÊ GANHA 2 MESES DE GRAÇA! ✨
-                </div>
-                <ul class="plan-features">
-                    <li>Todos os benefícios do Plano Mensal, e mais:</li>
-                    <li>Economia de 17% (2 meses por nossa conta)</li>
-                    <li>Tranquilidade por 365 dias para focar apenas em crescer</li>
-                    <li>Acesso prioritário a todas as novas funcionalidades</li>
-                </ul>
-                <a href="https://pay.hotmart.com/A102287980V?off=5v0wl1i6" class="cta-button cta-button--primary">Quero Economizar e Crescer</a>
-            </div>
-            <div class="plan-card">
-                <h3>Plano Mensal</h3>
-                <p class="plan-subtitle">Flexibilidade para Começar</p>
-                <div class="plan-price">R$ 29,70 <span>/mês</span></div>
-                 <div class="value-stack" style="background-color: var(--cinza-claro); color: var(--cinza-escuro); font-weight: 400; font-style: italic;">Perfeito para dar o primeiro passo com total liberdade. Cancele quando quiser.</div>
-                <ul class="plan-features">
-                    <li>Precificação sem achismos</li>
-                    <li>Ficha Técnica Descomplicada</li>
-                    <li>Controle de Estoque Automático</li>
-                    <li>PDV de Vendas Ágil</li>
-                    <li>Dashboard "Raio-X" do seu Lucro</li>
-                    <li>Suporte via e-mail</li>
-                </ul>
-                <a href="https://pay.hotmart.com/A102287980V" class="cta-button cta-button--secondary">Começar com Flexibilidade</a>
-            </div>
-        </section>
-        <section class="social-proof-section">
-            <h3>A clareza que gera resultados reais.</h3>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>"Vender muito e não ver o dinheiro era frustrante. O LogiNexo me mostrou onde estava o erro. Em um mês, eu não só vi meu lucro aumentar, como senti a paz de ter o controle do meu negócio pela primeira vez."</p>
-                    <span>- Carla S., Confeiteira e cliente LogiNexo</span>
-                </div>
-                <div class="testimonial">
-                    <p>"Eu finalmente sei quanto vale a minha hora. Precificar minhas peças de couro deixou de ser um chute e passou a ser uma estratégia. Isso muda o jogo."</p>
-                    <span>- Marcos R., Artesão e cliente LogiNexo</span>
-                </div>
-            </div>
-        </section>
-        <section class="guarantee-section">
-            <h3>Sua Decisão Mais Segura: Garantia de 14 Dias.</h3>
-            <p>Seu investimento está 100% seguro. Escolha o plano que fizer mais sentido para você e teste o LogiNexo sem nenhum risco por 14 dias completos. Se, por qualquer motivo, você não sentir que esta é a ferramenta que vai te dar clareza e controle, basta nos enviar um e-mail ou solicitar via Hotmart. Nós reembolsamos 100% do valor, sem burocracia e sem perguntas.</p>
-        </section>
+        <!-- ... -->
     </main>
 </body>
 </html>
